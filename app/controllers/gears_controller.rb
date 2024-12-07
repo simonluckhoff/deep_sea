@@ -1,4 +1,6 @@
 class GearsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @gears = Gear.all
   end
@@ -15,8 +17,10 @@ class GearsController < ApplicationController
     @gear = Gear.new(gear_params)
     @gear.user = current_user
     if @gear.save
-      redirect_to new_gear_path(@gear)
+      # redirect_to new_gear_path(@gear)
+      redirect_to gear_path(@gear), notice: 'Gear was successfully created.'
     else
+      Rails.logger.debug @gear.errors.full_messages
       render :new
     end
   end
@@ -40,6 +44,6 @@ class GearsController < ApplicationController
   private
 
   def gear_params
-    params.require(:gear).permit(:title, :description, :price, :user_id)
+    params.require(:gear).permit(:title, :description, :price)
   end
 end
