@@ -1,0 +1,8 @@
+<h1>New Gear</h1>
+<%= simple_form_for @gear do |f| %>
+  <%= f.input :title %>
+   <%= f.input :description %>
+   <%= f.input :price %>
+  <%= f.button :submit %>
+<% end %>
+<%= link_to 'Back to gears', gears_path, class: 'btn btn-secondary' %>

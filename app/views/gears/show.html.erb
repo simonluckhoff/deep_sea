@@ -1,0 +1,6 @@
+<h1>Gear<%= @gear.title %></h1>
+<p>Description: <%= @gear.description %></p>
+<p>Price: <%= @gear.price %></p>
+
+<%# <%= link_to 'Update gear', gear_edit_path(@gear) %>
+  <%= link_to 'Delete', delete_gear_path(@gear), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
