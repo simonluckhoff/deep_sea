@@ -1,0 +1,8 @@
+<h1>Gear<%= @gear.title %></h1>
+<p>Description: <%= @gear.description %></p>
+<p>Price: <%= @gear.price %></p>
+
+<%= link_to 'Back to gears', gears_path, class: 'btn btn-secondary' %>
+
+  <%= link_to 'Update gear', edit_gear_path(@gear) %>
+<%= link_to 'Delete', gear_path(@gear), method: :delete, data: { confirm: "Are you sure?" } %>
