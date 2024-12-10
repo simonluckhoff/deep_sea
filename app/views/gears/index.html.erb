@@ -1,12 +1,14 @@
-<h1>Gears</h1>
+<div container>
+  <h1>Gears</h1>
 
-<% @gears.each do |gear| %>
+  <% @gears.each do |gear| %>
 
-<ul>
-  <li>
-    <%= link_to gear.title, gear %>
-  </li>
-<% end %>
+    <ul>
+      <li>
+        <%= link_to gear.title, gear %>
+      </li>
+  <% end %>
 
- <%= link_to 'Add Gear', new_gear_path %>
-</ul>
+  <%= link_to 'Add Gear', new_gear_path, class: 'add-gear-btn' %>
+ </ul>
+</div>
