@@ -1,0 +1,60 @@
+.container {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* Header Styles */
+
+ h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+ ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+ li:last-child {
+  border-bottom: none;
+}
+
+/* Link Styles */
+
+ a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+ a:hover {
+  color: #0056b3;
+}
+
+/* Add Gear Button Styles */
+
+.add-gear-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-gear-btn:hover {
+  background-color: #0056b3;
+}
