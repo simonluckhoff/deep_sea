@@ -1,0 +1,14 @@
+
+<div class="container">
+  <h1>Your bookings</h1>
+
+  <%= link_to "Create a new booking", new_gear_booking_path %>
+
+  <ul>
+    <%= @gear.title %> <br>
+    <% @bookings.each do |booking|  %>
+    <%= booking.start_date %> - <%= booking.end_date %> <br><br>
+    <%#= link_to "edit a booking", edit_gear_booking_path(booking) %>
+  <!---->  <% end %>
+  </ul>
+</div>
