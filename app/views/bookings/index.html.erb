@@ -7,8 +7,9 @@
   <ul>
     <%= @gear.title %> <br>
     <% @bookings.each do |booking|  %>
-    <%= booking.start_date %> - <%= booking.end_date %> <br><br>
-    <%#= link_to "edit a booking", edit_gear_booking_path(booking) %>
-  <!---->  <% end %>
+    <%= booking.start_date %> - <%= booking.end_date %> <br>
+    <%= link_to "Edit your booking", edit_gear_booking_path(booking) %>
+    <br><br>
+  <% end %>
   </ul>
 </div>

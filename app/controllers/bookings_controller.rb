@@ -50,7 +50,10 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    @booking = Booking.find(params[:id])
+    @gear = Gear.find(params[:gear_id])
+    # @booking = Booking.find(params[:id])
+    @booking = @gear.bookings.new(booking_params)
+    @booking.user = current_user
   end
 
   def update
