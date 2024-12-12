@@ -8,10 +8,19 @@
     <%#= @gear.title %> <br>
     <% @bookings.each do |booking|  %>
     <%= booking.start_date %> - <%= booking.end_date %> - <%= booking.gear.title %>
+    <% if booking.gear.present? %>
+     <%= link_to 'Update booking', edit_gear_booking_path(booking.gear, booking), class: 'btn btn-primary' %>
+    <% else %>
+      <span class="text-danger">No associated gear</span>
+    <% end %>
     <br><br>
   <% end %>
   </ul>
 
   <%= link_to "Home Page", gears_path, class: 'btn btn-primary' %>
+  <%# <%= link_to 'Update booking', edit_gear_booking_path(@booking.gear_id, @booking), class: 'btn btn-primary' %>
+   <%# <%= link_to 'Update booking', edit_gear_booking_path(@bookings.gear, booking), class: 'btn btn-primary' %>
+  <%# <%= link_to 'Update booking',  edit_gear_booking_path(@bookings), class: 'btn btn-primary' %>
+
 
 </div>

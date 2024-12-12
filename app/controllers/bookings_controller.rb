@@ -52,15 +52,15 @@ class BookingsController < ApplicationController
 
   def edit
     @gear = Gear.find(params[:gear_id])
-    # @booking = Booking.find(params[:id])
-    @booking = @gear.bookings.new(booking_params)
-    @booking.user = current_user
+    @booking = Booking.find(params[:id])
+    # @booking = @gear.bookings.new(booking_params)
+    # @booking.user = current_user
   end
 
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    redirect_to booking_path(@booking)
+    redirect_to bookings_path
   end
 
   def destroy

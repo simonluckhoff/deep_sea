@@ -2,10 +2,10 @@
 <div class="container">
   <h1>edit your booking</h1>
 
-  <%= simple_form_for([@booking]) do |f| %>
+  <%= simple_form_for([@gear, @booking]) do |f| %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
   <%= f.submit %>
   <% end %>
-  <%= link_to "delete", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+  <%= link_to "delete", bookings_path(@booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
 </div>

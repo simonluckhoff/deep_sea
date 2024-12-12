@@ -4,4 +4,5 @@
   <%= @booking.start_date %> <p> - </p> <%= @booking.end_date %>
 
 <%= link_to "your bookings", gear_bookings_path %>
+ <%= link_to 'Update booking', edit_gear_booking_path(@booking.gear_id, @booking), class: 'btn btn-primary' %>
 </div>
