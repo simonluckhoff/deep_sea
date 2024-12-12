@@ -2,8 +2,8 @@
 <h1>New Booking for <%= @gear.title.capitalize %></h1>
 
 <%= simple_form_for ([@gear, @booking]) do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
+  <%= f.input :start_date, input_html: { class: 'form-container' } %>
+  <%= f.input :end_date, input_html: { class: 'form-container' } %>
   <br><br>
   <%= f.button :submit, class: 'btn btn-primary' %>
   <%#= f.submit 'Create Booking', class: 'btn btn-primary' %>
