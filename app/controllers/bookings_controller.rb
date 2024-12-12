@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_gear
+  before_action :set_gear, only: [:new, :edit, :create, :update]
 
   def index
     @bookings = Booking.all
@@ -13,7 +13,8 @@ class BookingsController < ApplicationController
 
   def new
     @gear = Gear.find(params[:gear_id])
-    @booking = Booking.new
+    @booking = @gear.bookings.new
+    # @booking = Booking.new
     # @booking = @gear.bookings.new
   end
 
@@ -50,7 +51,10 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    @booking = Booking.find(params[:id])
+    @gear = Gear.find(params[:gear_id])
+    # @booking = Booking.find(params[:id])
+    @booking = @gear.bookings.new(booking_params)
+    @booking.user = current_user
   end
 
   def update
@@ -81,7 +85,14 @@ class BookingsController < ApplicationController
     @gear = Gear.find(params[:gear_id])
   end
 
+  # def set_gear
+  #   @gear = Gear.find(params[:gear_id])
+  #   @booking = @gear.bookings.new(booking_params)
+  #   @booking.user = current_user
+  # end
+
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :user_id)
+    # params.require(:booking).permit(:start_date, :end_date, :user_id)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end

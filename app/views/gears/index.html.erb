@@ -1,14 +1,13 @@
-<div container>
+<div class="mx-5">
   <h1>Gears</h1>
 
   <% @gears.each do |gear| %>
-
     <ul>
       <li>
-        <%= link_to gear.title, gear %>
+        <%= link_to gear.title.capitalize, gear %>
       </li>
+    </ul>
   <% end %>
-
+  <br>
   <%= link_to 'Add Gear', new_gear_path, class: 'add-gear-btn' %>
- </ul>
 </div>
