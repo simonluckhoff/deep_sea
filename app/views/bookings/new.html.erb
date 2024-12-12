@@ -1,21 +1,13 @@
-<!--<h1>Create a booking</h1>
+<div class="m-5">
+<h1>New Booking for <%= @gear.title.capitalize %></h1>
 
-<%#= simple_form_for [@gear, @gear.bookings.new] do |f| %>-->
-<%#= f.input :start_date %>
-<%#= f.input :end_date %>
-<%#= f.submit %>
-<%# end %>
-
-<div class="container">
-<h1>New Booking for <%= @gear.title %></h1>
-
-<%= simple_form_for [@gear, @booking] do |f| %>
+<%= simple_form_for ([@gear, @booking]) do |f| %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
-
-  <%= f.submit 'Create Booking', class: 'btn btn-primary' %>
+  <br><br>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+  <%#= f.submit 'Create Booking', class: 'btn btn-primary' %>
 <% end %>
-
-
-<%= link_to "See all bookings", gear_bookings_path %>
+<br><br>
+<%= link_to "See all bookings", bookings_path, class: 'btn btn-primary' %>
 </div>

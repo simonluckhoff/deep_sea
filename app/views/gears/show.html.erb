@@ -1,8 +1,22 @@
-<h1>Gear<%= @gear.title %></h1>
-<p>Description: <%= @gear.description %></p>
-<p>Price: <%= @gear.price %></p>
 
-<%= link_to 'Back to gears', gears_path, class: 'btn btn-secondary' %>
+<div class="mx-5">
+  <h1><%= @gear.title.capitalize %></h1>
+  <p>Description: <%= @gear.description.capitalize %></p>
+  <p>Price: R<%= @gear.price %></p>
 
-  <%= link_to 'Update gear', edit_gear_path(@gear) %>
-<%= link_to 'Delete', gear_path(@gear), method: :delete, data: { confirm: "Are you sure?" } %>
+  <br>
+
+  <%= link_to 'Back to gears', gears_path, class: 'btn btn-primary' %>
+
+  <br><br>
+
+  <%= link_to 'Update gear', edit_gear_path(@gear), class: 'btn btn-primary' %>
+
+  <br><br>
+
+  <%= link_to "Add Booking", new_gear_booking_path(@gear), class: 'btn btn-primary'  %>
+
+  <br><br>
+
+  <%= link_to "Delete", gear_path(@gear), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-primary' %>
+</div>

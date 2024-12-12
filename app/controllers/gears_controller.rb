@@ -7,6 +7,7 @@ class GearsController < ApplicationController
 
   def show
     @gear = Gear.find(params[:id])
+    # @booking = Booking.find(params[:id])
   end
 
   def new
