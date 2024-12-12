@@ -2,12 +2,19 @@
 <div class="mx-5">
   <h1><%= @gear.title.capitalize %></h1>
   <p>Description: <%= @gear.description.capitalize %></p>
-  <p>
+<!--  <p>
     Price: R
-    <span data-controller="typed" data-typed-strings-value="<%= [@gear.price] %>">
-      <%= @gear.price %>
-    </span>
-  </p>
+    <span data-controller="typed" data-typed-strings-value="<%#= [@gear.price] %>">
+      <%#= @gear.price %>-->
+<!--    </span>
+  </p>-->
+
+  <p>
+  Price: R
+  <span data-controller="typed" data-typed-strings-value="<%= [@gear.price.to_s] %>">
+    <%= @gear.price %>
+  </span>
+</p>
 
   <br><br>
 
