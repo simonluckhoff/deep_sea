@@ -2,15 +2,29 @@
 <div class="mx-5">
   <h1><%= @gear.title.capitalize %></h1>
   <p>Description: <%= @gear.description.capitalize %></p>
-  <p>Price: R<%= @gear.price %></p>
-
-  <br>
-
-  <%= link_to 'Back to gears', gears_path, class: 'btn btn-primary' %>
+  <p>
+    Price: R
+    <span data-controller="typed" data-typed-strings-value="<%= [@gear.price] %>">
+      <%= @gear.price %>
+    </span>
+  </p>
 
   <br><br>
 
-  <%= link_to 'Update gear', edit_gear_path(@gear), class: 'btn btn-primary' %>
+  <p>Current Bookings:</p>
+    <% @gear.bookings.each do |booking|  %>
+    <%= booking.start_date %> - <%= booking.end_date %> -
+    <%= link_to "Delete this Booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-primary' %>
+    <br><br>
+  <% end %>
+
+  <br><br>
+
+  <%= link_to 'Home Page', gears_path, class: 'btn btn-primary' %>
+
+  <br><br>
+
+  <%= link_to 'Edit gear', edit_gear_path(@gear), class: 'btn btn-primary' %>
 
   <br><br>
 
@@ -18,5 +32,5 @@
 
   <br><br>
 
-  <%= link_to "Delete", gear_path(@gear), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-primary' %>
+  <%= link_to "Delete this Gear", gear_path(@gear), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-primary' %>
 </div>
