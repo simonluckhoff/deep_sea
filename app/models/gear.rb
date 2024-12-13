@@ -5,4 +5,5 @@ class Gear < ApplicationRecord
   validates :price, presence: true, numericality: { only_integer: true }
   validates :user_id, presence: true
   has_many :bookings, dependent: :destroy
+  has_one_attached :photo
 end
