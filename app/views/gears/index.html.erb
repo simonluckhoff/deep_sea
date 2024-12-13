@@ -1,16 +1,16 @@
 <div class="mx-5">
   <h1>Gear</h1>
-  <div class="list">
-  <ul>
+  <div class="list m-2">
+    <ul>
     <% @gears.each do |gear| %>
 
         <% if gear.photo.attached? %>
-          <%= cl_image_tag gear.photo.key, height: 300, width: 400, crop: :fill %>
+          <%= cl_image_tag gear.photo.key, height: 150, width: 200, crop: :fill %>
         <% end %>
         <%= link_to gear.title.capitalize, gear %>
 
     <% end %>
-  </ul>
+    </ul>
   </div>
   <br>
   <%= link_to 'Add Gear', new_gear_path, class: 'add-gear-btn' %>
