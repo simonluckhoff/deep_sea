@@ -3,7 +3,7 @@
   <h1>Your bookings</h1>
 
   <%#= link_to "Create a new booking", new_gear_booking_path %>
-<!---->
+ <!---->
   <ul>
     <%#= @gear.title %> <br>
     <% @bookings.each do |booking|  %>
@@ -15,19 +15,17 @@
      <% elsif booking.status == "declined" %>
      <p>declined</p>
      <% else %>
-
-  <%= link_to 'Approve', approve_booking_path( booking),class: 'btn btn-success', data: {turbo_method: :patch, confirm: 'Are you sure you want to approve this booking?' } %>
-  <%= link_to 'Decline', decline_booking_path( booking), class: 'btn btn-danger', data: {turbo_method: :patch, confirm: 'Are you sure you want to decline this booking?' } %>
-     <% end %>
-     <%= link_to 'Update booking', edit_gear_booking_path(booking.gear, booking), class: 'btn btn-primary' %>
-    <% else %>
-      <span class="text-danger">No associated gear</span>
-    <% end %>
-    </li>
-    <br><br>
-  <% end %>
-  </ul>
-
-  <%= link_to "Home Page", gears_path, class: 'btn btn-primary' %>
-
-</div>
+    <div class="button">
+      <%= link_to 'Approve', approve_booking_path( booking),class: 'btn btn-success', data: {turbo_method: :patch, confirm: 'Are you sure you want to approve this booking?' } %>
+      <%= link_to 'Decline', decline_booking_path( booking), class: 'btn btn-danger', data: {turbo_method: :patch, confirm: 'Are you sure you want to decline this booking?' } %>
+        <% end %>
+        <%= link_to 'Update booking', edit_gear_booking_path(booking.gear, booking), class: 'btn btn-primary' %>
+        <% else %>
+          <span class="text-danger">No associated gear</span>
+        <% end %>
+          </li>
+        <br><br>
+      <% end %>
+      <%= link_to "Home Page", gears_path, class: 'btn btn-primary' %>
+      </ul>
+    </div>
