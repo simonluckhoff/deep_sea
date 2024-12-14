@@ -14,8 +14,21 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  #   resources :gears do
+  #     resources :bookings, except: [:index]
+  #   end
+  #      resources :bookings, only: [:index, :destroy]
+  # end
+
   resources :gears do
     resources :bookings, except: [:index]
+
   end
-  resources :bookings, only: [:index, :destroy]
+
+  resources :bookings, only: [:index, :destroy] do
+    member do
+      patch :approve
+      patch :decline
+    end
+  end
 end

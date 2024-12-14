@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_gear, only: [:new, :edit, :create, :update]
+  before_action :set_booking, only: [:show, :edit, :update, :destroy, :approve, :decline]
 
   def index
     @bookings = Booking.all
@@ -53,15 +54,15 @@ class BookingsController < ApplicationController
 
   def edit
     @gear = Gear.find(params[:gear_id])
-    # @booking = Booking.find(params[:id])
-    @booking = @gear.bookings.new(booking_params)
-    @booking.user = current_user
+    @booking = Booking.find(params[:id])
+    # @booking = @gear.bookings.new(booking_params)
+    # @booking.user = current_user
   end
 
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    redirect_to booking_path(@booking)
+    redirect_to bookings_path
   end
 
   def destroy
@@ -71,9 +72,23 @@ class BookingsController < ApplicationController
   end
 
   def approve
+    @booking = Booking.find(params[:id])
+    @booking.update(status: 'approved')
+    # redirect_to bookings_path, notice: 'Booking was successfully approved.'
+    respond_to do |format|
+      format.html { redirect_to bookings_path, notice: 'Booking was successfully approved.' }
+      format.turbo_stream { render turbo_stream: turbo_stream.replace("booking_#{@booking.id}_actions", partial: "bookings/approved", locals: { booking: @booking }) }
+    end
   end
 
   def decline
+    @booking = Booking.find(params[:id])
+    @booking.update(status: 'declined')
+    # redirect_to bookings_path, notice: 'Booking was successfully declined.'
+    respond_to do |format|
+      format.html { redirect_to bookings_path, notice: 'Booking was successfully declined.' }
+      format.turbo_stream { render turbo_stream: turbo_stream.replace("booking_#{@booking.id}_actions", partial: "bookings/declined", locals: { booking: @booking }) }
+    end
   end
 
   private
@@ -91,6 +106,10 @@ class BookingsController < ApplicationController
   #   @booking = @gear.bookings.new(booking_params)
   #   @booking.user = current_user
   # end
+
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
 
   def booking_params
     # params.require(:booking).permit(:start_date, :end_date, :user_id)
