@@ -9,3 +9,4 @@ pin "bootstrap", to: "bootstrap.min.js", preload: true
 pin "@popperjs/core", to: "popper.js", preload: true
 
 pin "typed.js" # @2.1.0
+pin "flatpickr" # @4.6.13

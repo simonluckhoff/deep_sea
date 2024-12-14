@@ -3,3 +3,11 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "@popperjs/core"
 import "bootstrap"
+// import Rails from "@rails/ujs"
+// Rails.start()
+
+//  import Rails from "@rails/ujs"
+//  import { Turbo } from "@hotwired/turbo-rails"
+//  Rails.start()
+//  Turbo.start()
+//   console.log("Rails UJS started:", Rails)
