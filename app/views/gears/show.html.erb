@@ -10,6 +10,12 @@
 
   <br><br>
 
+  <div class="list m-2 gear-container">
+    <%= cl_image_tag @gear.photo.key, height: 150, width: 200, crop: :fill %>
+  </div>
+
+  <br><br>
+
   <p>Current Bookings:</p>
     <% @gear.bookings.each do |booking|  %>
     <%= booking.start_date %> - <%= booking.end_date %> -
