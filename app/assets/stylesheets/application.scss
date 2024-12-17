@@ -10,8 +10,19 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/show";
 
 .form-container {
   background-color: #a7bdd5;  /* Change the background color of the form */
   color: #164569;
+}
+
+body{
+  background-image: linear-gradient(to top, #071626, #15375a);
+  height: 100%;
+  padding-bottom: 50px;
+}
+
+html{
+  background-color: #071626;
 }

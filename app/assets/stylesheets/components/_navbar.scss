@@ -1,6 +1,15 @@
+.sticky{
+  position: fixed;
+  width: 100%;
+  top: 0; /* Keep the navbar at the top of the viewport */
+  z-index: 1000; /* Make sure it's above other content */
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: #071626;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,4 +22,25 @@
 
 .nav-link{
   color: #ff8e2b;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-link:hover{
+  color: #ff8e2b;
+  transform: scale(1.2);
+}
+
+.navbar .image{
+  transition: transform 0.3s ease;
+}
+
+.navbar .image:hover{
+  color: #ff8e2b;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.dropdown-menu{
+  cursor: pointer;
 }

@@ -1,75 +1,69 @@
-  <div class="list m-2 mx-5 gear-container">
-    <%= cl_image_tag @gear.photo.key, height: 150, width: 200, crop: :fill %>
-  </div>
-    <div class="mx-5">
-      <h1><%= @gear.title.capitalize %></h1>
-      <p>Description: <%= @gear.description.capitalize %></p>
-      <p>Price: R
-        <span data-controller="typed" data-typed-strings-value="<%= [@gear.price.to_s] %>">
-          <%= @gear.price %>
-        </span>
-      </p>
-      <br><br>
-      <p>Current Bookings:</p>
-      <% @gear.bookings.each do |booking|  %>
-        <%= booking.start_date %> - <%= booking.end_date %> -
-        <%# <%= link_to "Delete this Booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-primary' %>
-        <br><br>
-      <% end %>
-      <br><br>
-      <div class="button">
-        <%= link_to 'Home Page', gears_path, class: 'btn btn-primary' %>
-        <br><br>
-        <%= link_to "Add Booking", new_gear_booking_path(@gear), class: 'btn btn-primary'  %>
-        <br><br>
+<div class="gear-card">
 
-<<<<<<< HEAD
-<div class="mx-5">
-  <h1><%= @gear.title.capitalize %></h1>
-  <p>Description: <%= @gear.description.capitalize %></p>
-  <p>Price: R
-    <span data-controller="typed" data-typed-strings-value="<%= [@gear.price.to_s] %>">
-      <%= @gear.price %>
-    </span>
-  </p>
-
-  <br><br>
-
-  <div class="list m-2 gear-container">
-    <%= cl_image_tag @gear.photo.key, height: 150, width: 200, crop: :fill %>
+  <div class="image">
+    <%= cl_image_tag @gear.photo.key, height: 150, width: 200, crop: :fill, class: "image-gear" %>
   </div>
 
-  <br><br>
+  <div class="info">
+    <h1 class="title"><%= @gear.title.capitalize %></h1>
 
-  <p>Current Bookings:</p>
-    <% @gear.bookings.each do |booking|  %>
-    <%= booking.start_date %> - <%= booking.end_date %> -
-    <%= link_to "Delete this Booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-primary' %>
+    <p>Description: <%= @gear.description.capitalize %></p>
+
+    <p>Price: R
+      <span data-controller="typed" data-typed-strings-value="<%= [@gear.price.to_s] %>">
+        <%= @gear.price %>
+      </span>
+    </p>
+
     <br><br>
-  <% end %>
 
-  <br><br>
+    <p class="bookings-title">Current Bookings:</p>
+      <% @gear.bookings.each do |booking|  %>
+      <%= booking.start_date %> - <%= booking.end_date %> -
+      <%= link_to "Delete this Booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-primary' %>
+      <br><br>
+    <% end %>
+  </div>
+</div>
 
-  <%= link_to 'Home Page', gears_path, class: 'btn btn-primary' %>
+<div class="links">
 
-  <br><br>
+  <%#= link_to 'Home Page', gears_path, class: 'btn btn-primary' %>
 
   <%= link_to 'Edit gear', edit_gear_path(@gear), class: 'btn btn-primary' %>
 
-  <br><br>
-
   <%= link_to "Add Booking", new_gear_booking_path(@gear), class: 'btn btn-primary'  %>
 
-  <br><br>
-
   <%= link_to "Delete this Gear", gear_path(@gear), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-primary' %>
+
 </div>
-=======
-        <% if @gear.user == current_user %>
-          <%= link_to 'Edit gear', edit_gear_path(@gear), class: 'btn btn-primary' %>
-          <br><br>
-          <%= link_to "Delete this Gear", gear_path(@gear), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-primary' %>
-        <% end %>
-      </div>
-    </div>
->>>>>>> 5959922aff7b81c47299b629aa42709f9e5c39a9
+
+
+
+
+
+<!--  <div class="list m-2 mx-5 gear-container">-->
+    <%#= cl_image_tag @gear.photo.key, height: 150, width: 200, crop: :fill %>
+<!--  </div>
+    <div class="mx-5">
+      <h1><%#= @gear.title.capitalize %></h1>
+      <p>Description: <%#= @gear.description.capitalize %></p>
+      <p>Price: R
+        <span data-controller="typed" data-typed-strings-value="<%#= [@gear.price.to_s] %>">
+          <%#= @gear.price %>-->
+<!--        </span>
+      </p>
+      <br><br>
+      <p>Current Bookings:</p>
+      <%# @gear.bookings.each do |booking|  %>-->
+        <%#= booking.start_date %> <!--- <%#= booking.end_date %> --->
+        <%# <%= link_to "Delete this Booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-primary' %>
+<!-- <br><br>-->
+      <%# end %>
+<!--      <br><br>
+      <div class="button">
+        <%#= link_to 'Home Page', gears_path, class: 'btn btn-primary' %>-->
+<!--        <br><br>-->
+        <%#= link_to "Add Booking", new_gear_booking_path(@gear), class: 'btn btn-primary'  %>
+<!--        <br><br>
+-->
