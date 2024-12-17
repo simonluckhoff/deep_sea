@@ -8,7 +8,9 @@
   font-family: Arial, sans-serif;
   line-height: 1.6;
   color: #ff8e2b;
-  background-color: #0d2137;
+  // background-color: #0d2137;
+  // background-image: linear-gradient(to top, #071626, #15375a);
+  height: 100vh;
 }
 
 /* Header Styles */
@@ -49,18 +51,3 @@
 }
 
 /* Add Gear Button Styles */
-
-.add-gear-btn {
-  // background-color: #007bff;
-  background-color: #164569;
-  // color: #fff;
-  color: #ff8e2b;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.add-gear-btn:hover {
-  background-color: #0056b3;
-}
