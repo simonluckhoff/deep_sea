@@ -3,3 +3,31 @@
   gap: 10px;
   margin-bottom: 50px;
 }
+
+.gear-header{
+  display: flex;
+  justify-content: space-between;
+  margin-right: 55px;
+  margin-left: 55px;
+}
+
+.head-gear{
+  font-weight: bold;
+}
+
+.addgear{
+  border-radius: 5px;
+  background-image: linear-gradient(to top, #13365c, #071626);
+  padding: 15px;
+  width: 120px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.addgear:hover{
+  filter: brightness(1.2);
+  background-image: linear-gradient(to top, #15375a, #071626);
+}
