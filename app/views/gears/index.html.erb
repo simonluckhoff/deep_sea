@@ -1,17 +1,45 @@
 
 <div class="mx-5 gearbody">
   <div class="gear-header">
-    <h1 class="head-gear">Gear</h1>
+    <h1 class="head-gear">Gears</h1>
     <%= link_to 'Add Gear', new_gear_path, class: "addgear" %>
   </div>
 
   <div class="list m-2 gear-container">
-    <% @gears.each do |gear| %>
+    <% @gears.each_with_index do |gear, index| %>
       <div class="image-container">
         <% if gear.photo.attached? %>
           <%= cl_image_tag gear.photo.key, height: 150, width: 200, crop: :fill, class: "image-front" %>
         <% end %>
         <p><%= link_to gear.title.capitalize, gear, class: "overlay-text" %></p>
+
+        <div class="icon-group">
+          <%# <i class="fas fa-heart"></i> %>
+          <%# <i class="bi bi-three-dots"></i> %>
+          <span class="suit-heart">&#9829;</span>
+          <%# <i class="bi bi-suit-heart"></i> %>
+        </div>
+
+        <div class="dots-group">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+
+        <div class="fantasy-address">
+         <p>
+            <i class="fas fa-star star-icon"></i>
+            <span class="rating">
+              <% if index < @gears.size / 2 %>
+                 4.67
+              <% else %>
+                 4.35
+              <% end %>
+            </span>
+            <%= @fantasy_addresses[index] %>
+          </p>
+        </div>
+
       </div>
     <% end %>
   </div>

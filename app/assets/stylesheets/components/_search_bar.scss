@@ -1,0 +1,33 @@
+.search-form {
+  width: 100%;
+  max-width: 500px; /* Increase the maximum width */
+  margin: 0 auto;
+ }
+
+ .input-group {
+   position: relative;
+   display: flex;
+   align-items: center;
+  }
+
+  .search-input {
+   width: 100%;
+   padding: 15px 25px; /* Increase padding for a larger input */
+   border-radius: 25px;
+   border: 1px solid #ccc;
+   outline: none;
+   font-size: 18px; /* Increase font size */
+  }
+
+ .input-group-append .search-btn {
+  border-radius: 0 25px 25px 0; /* Rounded corners with right part */
+  border: 1px solid #ccc;
+  font-size: 18px; /* Increase font size */
+  padding: 15px 25px; /* Increase padding to match input */
+  margin-left: -1px; /* Ensure no gap between input and button */
+  transition: background-color 0.3s ease;
+}
+
+.input-group-append .search-btn:hover {
+  background-color: #0056b3;
+}

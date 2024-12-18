@@ -1,36 +1,38 @@
 
 <div class="m-5 gearbody">
-  <h1>Your bookings</h1>
-
-  <%#= link_to "Create a new booking", new_gear_booking_path %>
- <!---->
- <div class="cards">
-    <ul>
-      <%#= @gear.title %> <br>
-      <% @bookings.each do |booking|  %>
-      <li>
-      <%= booking.gear.title %>
-      <br>
-      <br>
-      <%= booking.start_date %> : <%= booking.end_date %>
-  </div>
-    <div class="button">
-      <% if booking.present? %>
-      <% if booking.status == "approved" %>
-      <p> approved</p>
-      <% elsif booking.status == "declined" %>
-      <p>declined</p>
-      <% else %>
-      <%= link_to 'Approve', approve_booking_path( booking),class: 'btn btn-success', data: {turbo_method: :patch, confirm: 'Are you sure you want to approve this booking?' } %>
-      <%= link_to 'Decline', decline_booking_path( booking), class: 'btn btn-danger', data: {turbo_method: :patch, confirm: 'Are you sure you want to decline this booking?' } %>
-        <% end %>
-        <%= link_to 'Update booking', edit_gear_booking_path(booking.gear, booking), class: 'btn btn-primary' %>
-        <% else %>
-          <span class="text-danger">No associated gear</span>
-        <% end %>
-          </li>
-        <br><br>
+  <h1>Bookings</h1>
+  <div class="cards">
+    <div class="row">
+      <% @bookings.each do |booking| %>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title"><%= booking.gear.title %></h5>
+              <p class="card-text">
+                <strong>Booking Dates:</strong> <%= booking.start_date %> to <%= booking.end_date %>
+              </p>
+              <div class="button-group mt-3">
+                <% if booking.present? %>
+                  <% if booking.status == "approved" %>
+                    <p class="text-success">Approved</p>
+                  <% elsif booking.status == "declined" %>
+                    <p class="text-danger">Declined</p>
+                  <% else %>
+                    <%= link_to 'Approve', approve_booking_path(booking), class: 'btn btn-success', data: { turbo_method: :patch, confirm: 'Are you sure you want to approve this booking?' } %>
+                    <%= link_to 'Decline', decline_booking_path(booking), class: 'btn btn-danger', data: { turbo_method: :patch, confirm: 'Are you sure you want to decline this booking?' } %>
+                  <% end %>
+                  <%= link_to 'Update booking', edit_gear_booking_path(booking.gear, booking), class: 'btn btn-primary' %>
+                <% else %>
+                  <span class="text-danger">No associated gear</span>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
       <% end %>
-      <%= link_to "Home Page", gears_path, class: 'btn btn-primary' %>
-      </ul>
     </div>
+    <div class="text-center mt-4">
+      <%# <%= link_to "Home Page", gears_path, class: 'btn btn-primary' %> 
+    </div>
+  </div>
+</div>
