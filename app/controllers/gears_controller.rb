@@ -2,7 +2,11 @@ class GearsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @gears = Gear.all
+    if params[:query].present?
+      @gears = Gear.search_by_title_and_description(params[:query])
+    else
+      @gears = Gear.all
+    end
   end
 
   def show

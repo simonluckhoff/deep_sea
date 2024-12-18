@@ -1,15 +1,28 @@
+require "faker"
+
 puts "Cleaning database..."
 Gear.destroy_all
 User.destroy_all
 
 puts "Creating users..."
+users_data = [
+  { email: 'test@example.com', password: 'password' },
+  { email: 'simon@example.com', password: 'password' },
+  { email: 'sharon@example.com', password: 'password' }
+]
 
 # Creating a default user
-user = User.find_or_create_by!(email: 'test@example.com') do |u|
-  u.password = 'password'
+users_data.each do |user_data|
+  user = User.find_or_create_by!(email: user_data[:email]) do |u|
+    u.password = user_data[:password]
+  end
+  puts "Created user: #{user.email}"
 end
+# user = User.find_or_create_by!(email: 'test@example.com') do |u|
+#   u.password = 'password'
+# end
 
-puts "Created user: #{user.email}"
+# puts "Created user: #{user.email}"
 
 puts "Creating gears..."
 
@@ -60,7 +73,7 @@ gears_data.each do |gear_data|
   gear = Gear.find_or_create_by!(title: gear_data[:title]) do |g|
     g.description = gear_data[:description]
     g.price = gear_data[:price]
-    g.user = user
+    g.user = User.all.sample
   end
 
   puts "Created gear: #{gear.title}"
@@ -73,6 +86,24 @@ gears_data.each do |gear_data|
     puts "Attached image to gear: #{gear.title}"
   rescue => e
     puts "Failed to attach image for #{gear.title}: #{e.message}"
+  end
+end
+gears = Gear.all
+puts "Creating bookings..." # Creating bookings for each gear
+gears.each do |gear|
+  2.times do
+    start_date = Faker::Date.between(from: 2.days.ago, to: Date.today)
+    end_date = start_date + rand(1..14).days
+    user = User.all.sample
+
+    booking = Booking.create!(
+      start_date: start_date,
+      end_date: end_date,
+      gear: gear,
+      user: user,
+      status: ['pending', 'approved', 'declined'].sample
+    )
+    puts "Created booking for #{gear.title} from #{booking.start_date} to #{booking.end_date} by #{user.email}"
   end
 end
 
