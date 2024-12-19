@@ -1,4 +1,4 @@
-<div class="m-5 gearbody">
+<div class="m-5 gearbody d-none"data-target="toggle.toggleable" >
 <h1>New Booking for <%= @gear.title.capitalize %></h1>
 
 <%= simple_form_for ([@gear, @booking]) do |f| %>
@@ -11,5 +11,5 @@
   <%#= f.submit 'Create Booking', class: 'btn btn-primary' %>
 <% end %>
 <br><br>
-<%# <%= link_to "See all bookings", bookings_path, class: 'btn btn-primary' %> 
+<%# <%= link_to "See all bookings", bookings_path, class: 'btn btn-primary' %>
 </div>

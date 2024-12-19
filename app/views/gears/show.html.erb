@@ -31,10 +31,19 @@
   <%#= link_to 'Home Page', gears_path, class: 'btn btn-primary' %>
 
   <%= link_to 'Edit gear', edit_gear_path(@gear), class: 'btn btn-primary' %>
-
-  <%= link_to "Add Booking", new_gear_booking_path(@gear), class: 'btn btn-primary'  %>
+<div data-controller="toggle">
+<%# <%= link_to "Add Booking", new_gear_booking_path(@gear), class: 'btn btn-primary' data-action="click->toggle#fire"  %>
+<button class="btn btn-primary" data-action="click->toggle#fire">Add Booking</button>
+</div>
 
   <%= link_to "Delete this Gear", gear_path(@gear), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-primary' %>
 
 </div>
-
+<div class="m-5 gearbody d-none" data-toggle-target="toggleable">
+<h1>New Booking for <%= @gear.title.capitalize %></h1>
+<%= simple_form_for([@gear, @booking]) do |f| %>
+<%= f.input :start_date, input_html: { class: 'form-container' }, as: :string, input_html: { data: { controller: "datepicker" } } %>
+<%= f.input :end_date, input_html: { class: 'form-container' }, as: :string, input_html: { data: { controller: "datepicker" } } %>
+<br><br>
+ <%= f.button :submit, class: 'btn btn-primary' %>
+ <% end %> <br><br> </div>
