@@ -71,4 +71,4 @@ end
 
 
 gem "cloudinary"
-gem "dotenv-rails"
+# gem "dotenv-rails"
