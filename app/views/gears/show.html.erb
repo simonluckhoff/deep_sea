@@ -8,9 +8,9 @@
     <div class="info">
       <h1 class="title"><%= @gear.title.capitalize %></h1>
 
-      <p>Description: <%= @gear.description.capitalize %></p>
+      <p><%= @gear.description.capitalize %></p>
 
-      <p>Price: R
+      <p>R
         <span data-controller="typed" data-typed-strings-value="<%= [@gear.price.to_s] %>">
           <%= @gear.price %>
         </span>
@@ -28,14 +28,18 @@
   </div>
 </div>
 
-<div class="links">
+<div class="links mt-3">
+  <% if user_signed_in? && @gear.user == current_user %>
+    <%#= link_to 'Home Page', gears_path, class: 'btn btn-primary' %>
 
-  <%#= link_to 'Home Page', gears_path, class: 'btn btn-primary' %>
+    <%= link_to 'Edit gear', edit_gear_path(@gear), class: 'btn btn-primary' %>
+    <%= link_to "Delete this Gear", gear_path(@gear), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-primary' %>
+   <%# <div data-controller="toggle"> %>
+  <% else %>
+    <%= link_to "Add Booking", new_gear_booking_path(@gear), class: 'btn btn-primary' %>
+    <%# <button class="btn btn-primary" data-action="click->toggle#fire">Add Booking</button> %>
+    <%# </div> %>
+  <% end %>
 
-  <%= link_to 'Edit gear', edit_gear_path(@gear), class: 'btn btn-primary' %>
-
-  <%= link_to "Add Booking", new_gear_booking_path(@gear), class: 'btn btn-primary'  %>
-
-  <%= link_to "Delete this Gear", gear_path(@gear), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-primary' %>
 
 </div>

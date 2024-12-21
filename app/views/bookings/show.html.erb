@@ -3,8 +3,10 @@
   <%= @booking.start_date %> <p> - </p> <%= @booking.end_date %>
   <div class="button">
     <%= link_to "your bookings", gear_bookings_path %>
+     <% if user_signed_in? && @booking.user == current_user %>
     <%= link_to 'Update booking', edit_gear_booking_path(@booking.gear_id, @booking), class: 'btn btn-primary' %>
-    <%= link_to "Delete this Booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-primary' %>
+      <%= link_to "Delete this Booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-primary' %>
+    <% end %>
   </div>
 
 </div>

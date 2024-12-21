@@ -3,9 +3,10 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy, :approve, :decline]
 
   def index
-    @bookings = Booking.all
-    # @bookings = current_user.bookings
-    # bookings made 
+    # @bookings = Booking.all
+    @mybookings = current_user.bookings
+    @mygears = current_user.gears
+    # bookings made
   end
 
   def show
