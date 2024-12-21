@@ -1,0 +1,59 @@
+@import "home";
+
+.log-in{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 140px;
+}
+
+.log-in{
+  h2{
+    font-weight: bold;
+    padding-bottom: 25px;
+  }
+}
+.before{
+  padding: 70px;
+  text-align: center;
+  background-image: linear-gradient(to top, #15375a, #071626);
+  border-radius: 7px;
+}
+
+.form-inputs{
+  width: 300px;
+}
+
+.btn{
+  color: #ff8e2b;
+  padding-bottom: 20px;
+  font-style: italic;
+}
+
+.form-text{
+  color: #ff8e2b;
+  font-style: italic;
+  opacity: 50%;
+}
+
+.form-check{
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.form-actions{
+  color: #ff8e2b;
+}
+
+.log-in-button{
+  color: #ff8e2b;
+  margin-bottom: 25px;
+  padding-top: 20px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.log-in-button:hover{
+  transform: scale(1.2);
+}
