@@ -1,11 +1,15 @@
-<div class="m-5">
-  <h1>Edit <%= @gear.title.capitalize %></h1>
-  <%= simple_form_for @gear do |f| %>
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :price %>
-    <%= f.button :submit, class: 'btn btn-primary' %>
-  <% end %>
-  <br>
-  <%= link_to 'Back to gears', gears_path, class: 'btn btn-primary' %>
+<div class="log-in">
+  <div class="before">
+    <div class="m-5">
+      <h1>Edit <%= @gear.title.capitalize %></h1>
+      <%= simple_form_for @gear do |f| %>
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <%= f.input :price %>
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      <% end %>
+      <br>
+      <%= link_to 'Back to gears', gears_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
 </div>

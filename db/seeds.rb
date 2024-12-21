@@ -64,8 +64,7 @@ gears_data = [
   { title: "HydraDock", description: "A mobile docking station for charging underwater drones", price: 450, image_url: "https://assets.newatlas.com/dims4/default/9543595/2147483647/strip/true/crop/8256x5504+0+0/resize/2880x1920!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2F7b%2Fde%2Fd823e8f246008048aac9ca4e8dc5%2Fseasam-05-novembre-2019-d6500.jpg" },
   { title: "FlareWhip", description: "A flexible underwater rescue rope with built-in flare signaling system", price: 100, image_url: "https://img.rezdy.com/PRODUCT_IMAGE/7166/rolling_2_lg.jpg" },
   { title: "Submarine Tent", description: "A collapsible, inflatable tent designed for underwater camping", price: 2000, image_url: "https://oceanopportunity.com/wp-content/uploads/2021/07/33.-MCU-Tent-underwater-scaled.jpg" },
-  { title: "HydroPaddle", description: "An electric paddleboard with regenerative energy capabilities", price: 800, image_url: "https://blog.boostsurfing.com/wp-content/uploads/2023/09/rover-motorized-paddle-board.jpg" },
-  { title: "EchoMask", description: "An augmented reality diving mask with built-in sonar and live mapping", price: 400, image_url: "https://www.panoxdisplay.com/uploadfile/images/application/ar_diving.jpg" }
+  { title: "HydroPaddle", description: "An electric paddleboard with regenerative energy capabilities", price: 800, image_url: "https://blog.boostsurfing.com/wp-content/uploads/2023/09/rover-motorized-paddle-board.jpg" }
 ]
 
 # Creating gears and attaching unique images
