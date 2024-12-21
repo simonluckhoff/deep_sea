@@ -8,6 +8,7 @@
 @import "cards";
 @import "search_bar";
 
+
 .gearbody{
   padding-top: 85px;
 }
@@ -53,7 +54,7 @@
   color: #ff8e2b;        /* Text color */
   padding-top: 10px;       /* Add some padding around the text */
   padding-left: 12px;
-  background: linear-gradient(to top, #071626, rgba(0, 0, 0, 0));
+  background: linear-gradient(to bottom, #071626, rgba(0, 0, 0, 0));
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -64,11 +65,10 @@
 
 .icon-group {
   position: absolute;
-  top: 10px; /* Position from the bottom */
+  top: 0.5px; /* Position from the bottom */
   right: 10px; /* Position from the right */
   display: flex;
   gap: 10px;
-   padding: 10px;
 }
 
 .icon-group i {
@@ -76,13 +76,13 @@
   font-size: 1.5rem;
   background-color: #ff8e2b;
   border-radius: 50%;
-  padding: 5px;
+  // padding: 5px;
 }
 
 .icon-group .suit-heart {
-  color: #fff;
+  color: #ff8e2b;
   font-size: 1.5rem;
-  background-color: rgba(0, 0, 0, 0.5);
+  // background-image: linear-gradient(to top, rgba(21, 55, 90, 0.7), rgba(7, 22, 38, 0.7));
   border-radius: 50%;
   padding: 5px;
 }

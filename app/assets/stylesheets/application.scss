@@ -11,6 +11,8 @@
 @import "components/index";
 @import "pages/index";
 @import "pages/show";
+@import "pages/new_login";
+
 
 .form-container {
   background-color: #a7bdd5;  /* Change the background color of the form */
@@ -26,5 +28,3 @@ body{
 html{
   background-color: #071626;
 }
-
-

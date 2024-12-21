@@ -44,3 +44,70 @@
 .dropdown-menu{
   cursor: pointer;
 }
+
+.navbar-search{
+  height: 50%;
+  border: 0;
+}
+
+.search-height{
+  border: 0;
+}
+
+.search-height::placeholder{
+  font-style: italic;
+  opacity: 50%;
+  color: #ff8e2b;
+}
+
+.search-button{
+  color: #ff8e2b;
+}
+
+.booking{
+  padding-top: 15px;
+}
+
+
+
+
+
+.search-form .input-group {
+  max-width: 600px; /* Set max width for better control */
+  width: 100%; /* Ensure it takes up full width of parent */
+  border-radius: 30px; /* Rounded corners */
+  overflow: hidden; /* Hide any overflow (for border-radius effect) */
+
+  border: 2px solid #ff8e2b;
+  height: 65px;
+}
+
+/* Style the input field */
+.search-form .search-input {
+  border-right: none; /* Remove right border to connect with button */
+  font-size: 20px; /* Adjust font size */
+  transition: all 0.3s ease; /* Smooth transition effect */
+
+  background-color: #071626; /* Transparent background */
+  color: #ff8e2b;
+  border: none;
+
+  border-right: 2px solid #ff8e2b; /* Adjust the width and color as needed */
+  z-index: 1000;
+}
+
+/* Focus effect for the input field */
+.search-form .search-input:focus {
+  outline: none; /* Remove the default focus outline */
+}
+
+/* Style the search button */
+.search-form .search-btn {
+  border-radius: 0 30px 30px 0; /* Rounded corners on the right side */
+  background-color: #071626; /* Transparent background */
+  font-size: 12px; /* Adjust font size */
+  padding: 8px 20px; /* Add padding inside the button */
+  cursor: pointer; /* Pointer on hover */
+  transition: all 0.3s ease; /* Smooth transition effect */
+  border: none;
+}
